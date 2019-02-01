@@ -2,6 +2,7 @@ terraform {
     backend "s3" {
         bucket="skope-aws-tf-state"
         key="staging/vpc/terraform.tfstate"
+        dynamodb_table = "skope-aws-tf-locks"
         region="us-west-1"
         encrypt="true"
         }
